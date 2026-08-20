@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	// Step 1: check whether 'c' falls within the printable range,
-	//         i.e. from ' ' (space, 32) to '~' (tilde, 126) inclusive.
+	// Step 1: this is just memset with c = 0 - you may call your own
+	//         ft_memset(s, 0, n), or repeat the byte-writing loop here.
 
-	// Step 2: return 1 if it does, 0 otherwise.
+	// Step 2: no return value (void) - bzero never returns anything.
 }
