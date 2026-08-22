@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 12:00:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/08/22 22:55:57 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/08/23 04:26:09 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*mem;
-	int				count;
+	size_t			count;
 
 	mem = (unsigned char *)s;
 	count = 0;
