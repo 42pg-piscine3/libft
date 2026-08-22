@@ -6,14 +6,11 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 12:00:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/08/21 12:00:00 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/08/23 04:15:07 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
 	// Step 1: edge case - if 'n' is 0, some callers pass NULL pointers;
 	//         make sure you never dereference dest/src in that case.
 
@@ -25,4 +22,22 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	//         that is what memmove is for.)
 
 	// Step 4: return the original 'dest' pointer.
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char *c_dst;
+	const unsigned char *c_src;
+
+	if(!n || !dest || !src)
+		return (0);
+	
+	c_dst = dest;
+	c_src = src;
+	while (0 < n)
+	{
+		*c_dst = *c_src;
+		c_dst++;
+		c_src++;
+		--n;
+	}
+	return (dest);
 }
