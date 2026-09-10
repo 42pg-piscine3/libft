@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 16:20:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/09/10 16:20:00 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/09/10 19:25:45 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char const	*beg;
-	char const	*end;
+	size_t	beg;
+	size_t	end;
 
 	if (!s1 || !set)
 		return (NULL);
-	beg = s1;
-	end = s1 + ft_strlen(s1);
-	while (*beg != '\0' && ft_strchr(set, *beg) != NULL)
+	beg = 0;
+	end = ft_strlen(s1);
+	while (s1[beg] != '\0' && ft_strchr(set, s1[beg]) != NULL)
 		++beg;
-	while (end > beg && ft_strchr(set, *(end - 1)) != NULL)
+	while (end > beg && ft_strchr(set, s1[end - 1]) != NULL)
 		--end;
-	return (ft_substr(beg, 0, (size_t)(end - beg)));
+	return (ft_substr(s1, (unsigned int)beg, end - beg));
 }
 
 /*
