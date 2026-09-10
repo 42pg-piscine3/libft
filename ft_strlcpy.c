@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 12:00:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/08/27 15:28:44 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/09/10 16:18:38 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	lensrc = ft_strlen(src);
 	if (!dst || !src)
 		return (0);
-	while (0 < size)
+	while (1 < size && *src != '\0')
 	{
 		*dst++ = *src++;
 		--size;
 	}
-	*(dst - 1) = '\0';
+	if (0 < size)
+		*dst = '\0';
 	return (lensrc);
 }
