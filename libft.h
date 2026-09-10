@@ -218,4 +218,110 @@ void	*ft_calloc(size_t nmemb, size_t size);
  */
 char	*ft_strdup(const char *s);
 
+/* Part 2 - additional functions */
+
+/**
+ * @brief Allocates and returns a substring of s, starting at index start
+ *      and at most len bytes long.
+ *
+ * @param s Source string.
+ * @param start Starting index of the substring within s.
+ * @param len Maximum length of the substring.
+ * @return char* The substring, or NULL if the allocation fails.
+ */
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+/**
+ * @brief Allocates and returns a new string made of s1 followed by s2.
+ *
+ * @param s1 Prefix string.
+ * @param s2 Suffix string.
+ * @return char* The joined string, or NULL if the allocation fails.
+ */
+char	*ft_strjoin(char const *s1, char const *s2);
+
+/**
+ * @brief Allocates and returns a copy of s1 without the leading and
+ *      trailing characters that appear in set.
+ *
+ * @param s1 String to trim.
+ * @param set Set of characters to strip from both ends.
+ * @return char* The trimmed string, or NULL if the allocation fails.
+ */
+char	*ft_strtrim(char const *s1, char const *set);
+
+/**
+ * @brief Splits s into an array of strings using c as the delimiter.
+ *
+ * @param s String to split.
+ * @param c Delimiter character.
+ * @return char** NULL-terminated array of new strings, or NULL if any
+ *      allocation fails.
+ */
+char	**ft_split(char const *s, char c);
+
+/**
+ * @brief Allocates and returns the decimal string representation of n.
+ *
+ * @param n Integer to convert.
+ * @return char* The string, or NULL if the allocation fails.
+ */
+char	*ft_itoa(int n);
+
+/**
+ * @brief Applies f to each character of s (with its index) and returns
+ *      a new string built from the results.
+ *
+ * @param s String to iterate over.
+ * @param f Function applied to each (index, character) pair.
+ * @return char* The new string, or NULL if the allocation fails.
+ */
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+/**
+ * @brief Applies f to each character of s (with its index), passing
+ *      each character by address so f may modify it in place.
+ *
+ * @param s String to iterate over.
+ * @param f Function applied to each (index, &character) pair.
+ * @return void
+ */
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+
+/**
+ * @brief Writes the character c to the file descriptor fd.
+ *
+ * @param c Character to output.
+ * @param fd File descriptor to write to.
+ * @return void
+ */
+void	ft_putchar_fd(char c, int fd);
+
+/**
+ * @brief Writes the string s to the file descriptor fd.
+ *
+ * @param s String to output.
+ * @param fd File descriptor to write to.
+ * @return void
+ */
+void	ft_putstr_fd(char *s, int fd);
+
+/**
+ * @brief Writes the string s, followed by a newline, to fd.
+ *
+ * @param s String to output.
+ * @param fd File descriptor to write to.
+ * @return void
+ */
+void	ft_putendl_fd(char *s, int fd);
+
+/**
+ * @brief Writes the integer n to the file descriptor fd.
+ *
+ * @param n Integer to output.
+ * @param fd File descriptor to write to.
+ * @return void
+ */
+void	ft_putnbr_fd(int n, int fd);
+
 #endif
