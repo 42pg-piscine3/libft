@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 12:00:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/08/21 09:58:34 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/09/10 15:45:42 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 	// Step 2: return 1 if it matches, 0 otherwise.
 int	ft_isdigit(int c)
 {
-	if ((0 <= c) && (c <= 9))
+	if (('0' <= c) && (c <= '9'))
 		return (1);
 	return (0);
 }
