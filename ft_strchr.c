@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 12:00:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/09/04 10:04:36 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/09/10 15:40:43 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@
 // Step 2: Loop through 's', compare each character to 'c' (cast to char).
 //         If they match, exit the loop.
 
-// Step 3: In the loop, if you reach the end of the string (the '\0' byte) without a match, return NULL.
+// Step 3: In the loop, if you reach the end of the string (the '\0' byte) 
+//         without a match, return NULL.
 
 // Step 4: Upon exit of loop return a pointer to that position in 's'.
-//         This will be the first occurrence of 'c' in 's', or the terminating '\0' if 'c' is '\0'.
+//         This will be the first occurrence of 'c' in 's', 
+//         or the terminating '\0' if 'c' is '\0'.
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != (char)c)
@@ -32,4 +34,4 @@ char	*ft_strchr(const char *s, int c)
 		++s;
 	}
 	return ((char *)s);
-} 
+}

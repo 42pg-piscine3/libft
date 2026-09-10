@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 12:00:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/09/10 14:54:47 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/09/10 15:39:49 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,17 @@
 	//         in the real atoi - you don't need to guard against it.)
 int	ft_atoi(const char *str)
 {
-	int i;
-	int sign;
-	int result;
+	int	i;
+	int	sign;
+	int	result;
 
 	i = 0;
 	sign = 1;
 	result = 0;
 	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
-			++i;
+	{
+		++i;
+	}
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')

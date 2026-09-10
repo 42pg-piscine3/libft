@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 12:00:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/08/27 15:20:28 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/09/10 15:28:13 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (0 < n)
 	{
 		if (*c_s == (char)c)
-			return ((void *)c_s); 
+			return ((void *)c_s);
 		++c_s;
 		--n;
 	}

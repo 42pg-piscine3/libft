@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 12:00:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/09/08 16:32:26 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/09/10 15:38:05 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,32 @@
 Step 1 — handle the empty-needle case
 
 Step 2 — precompute the needle's length
-Know little's length up front with ft_strlen, then only try starting positions i in big where the entire needle could fit inside the first len characters: 
+Know little's length up front with ft_strlen, then only try starting positions 
+i in big where the entire needle could fit inside the first len characters: 
 i + little_len <= len. 
-This directly encodes the "match can't exceed len" rule — if i + little_len > len, don't even try that position.
+This directly encodes the "match can't exceed len" rule 
+— if i + little_len > len, don't even try that position.
 
 Step 3 — outer loop: scan candidate start positions
 
 while (big[i] != '\0' && i + little_len <= len)
-Stop at the nul terminator of big, or once no further starting position could fit the needle within len.
+Stop at the nul terminator of big, or once no further starting position could 
+fit the needle within len.
 
 Step 4 — inner loop: compare manually, character by character
 
 j = 0;
 while (little[j] != '\0' && big[i + j] == little[j])
     j++;
-This walks both strings in lockstep. It stops either because little ran out (little[j] == '\0', meaning full match) or because the characters diverged.
+This walks both strings in lockstep. It stops either because little ran out 
+(little[j] == '\0', meaning full match) or because the characters diverged.
 
 Step 5 — check why the inner loop stopped
 
 if (little[j] == '\0')
     return ((char *)(big + i));
-If little[j] is '\0', every character matched — return the pointer into big where the match started.
+If little[j] is '\0', every character matched — return the pointer into big 
+where the match started.
 
 Step 6 — otherwise advance and keep scanning
 
