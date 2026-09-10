@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 12:00:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/08/23 03:25:05 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/08/27 22:57:12 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@
 
 	// Step 2: no return value (void) - bzero never returns anything.
 
-
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *byte;
-	
+	unsigned char	*byte;
+
 	byte = (unsigned char *)s;
 	while (0 < n)
 	{

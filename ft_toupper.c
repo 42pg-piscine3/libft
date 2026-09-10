@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 12:00:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/08/26 12:56:13 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/08/27 15:24:33 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 int	ft_toupper(int c)
 {
-	if ( 'a' <= c &&  c <= 'z')
+	if (('a' <= c) && (c <= 'z'))
 		c -= LIBFT_OFFSET_UP_TO_LOW;
 	return (c);
 }

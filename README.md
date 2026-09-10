@@ -1,13 +1,72 @@
 This project has been created as part of the 42 curriculum by joshtan
 
 <!--describe project, including its goal and a brief overview.-->
+
 <!-- 
 Part 1 - Libc functions
 To begin, you must reimplement a set of functions from the 1ibc. Your version will have the same prototypes and behaviors as the originals, adhering strictly to their definitions in the man page. The only difference will be their names, which must start with the ft_’ prefix. For example, strlen becomes ft_strlen.
 
+
+
 In order to implement the two following functions, you will use malloc ():
 - calloc
 - strdup
+
+-->
+
+# Description
+
+<!-- Part 1-->
+
+This project implements c library functions for the following functions:
+
+- [x] `isalpha`
+- [x] `isdigit`
+- [x] `isalnum`
+- [x] `isascii`
+- [x] `isprint`
+- [x] `strlen`
+- [x] `memset`
+- [x] `bzero`
+- [x] `memcpy`
+- [x] `memmove`
+- [x] `strlcpy`
+- [?] `strlcat`
+- [x] `toupper`
+- [x] `tolower`
+- [x] `strchr`
+- [x] `strrchr`
+- [x] `strncmp`
+- [X] `memchr`
+- [x] `memcmp`
+- [x] `strnstr`
+- [ ] `atoi`
+
+The function prototypes are as follows:
+
+- [x] int isalpha(int c)
+- [x] int isdigit(int c)
+- [x] int isalnum(int c)
+- [x] int isascii(int c)
+- [x] int isprint(int c)
+
+- [x] int toupper(int c)
+- [x] int tolower(int c)
+
+- [x] size_t strlen(const char *s);
+- [x] void *memset(void *s, int c, size_t n);
+- [x] void	ft_bzero(void *s, size_t n);
+- [x] void *memcpy(void *dest, const void *src, size_t n);
+- [x] void *memmove(void *dest, const void *src, size_t n);
+- [x] size_t strlcpy(char *dst, const char *src, size_t size);  
+- [ ] size_t strlcat(char *dst, const char *src, size_t size);
+- [ ] char *strchr(const char *s, int c);
+- [ ] char *strrchr(const char *s, int c);
+- [ ] int strncmp(const char *s1, const char *s2, size_t n);
+- [ ] void *memchr(const void *s, int c, size_t n);
+- [ ] int memcmp(const void *s1, const void *s2, size_t n);
+- [ ] char *strnstr(const char *big, const char *little, size_t len);
+
 
 ### IV.3 Part 2 - Additional functions
 
@@ -124,7 +183,7 @@ In this second part, you must develop a set of functions that are either not inc
 | Return Value      | None                                                                         |
 | External Function | `write`                                                                      |
 | Description       | Outputs the integer `n` to the specified file descriptor.                    |
-
+<!-- 
 ### IV.4 Part 3 - linked list
 
 Memory and string manipulation functions are useful. But you will soon discover that manipulating lists is even more useful.
@@ -237,35 +296,10 @@ Implement the following functions in order to easily use your lists:
 | Description       | Iterates through the list `lst`, applies the function `f` to each node's content, and creates a new list resulting of the successive applications of the function `f`. The `del` function is used to delete the content of a node if needed. |
 -->
 
-# Description
-<!-- Part 1-->
-
-This project implements c library functions for the following functions:
-int isalpha(int c)
-int isdigit(int c)
-int isalnum(int c)
-int isascii(int c)
-int isprint(int c)
-int toupper(int c)
-int tolower(int c)
-
-size_t strlen(const char *s);
-void *memset(void *s, int c, size_t n);
-void *memcpy(void *dest, const void *src, size_t n);
-void *memmove(void *dest, const void *src, size_t n);
-size_t strlcpy(char *dst, const char *src, size_t size);
-size_t strlcat(char *dst, const char *src, size_t size);
-char *strchr(const char *s, int c);
-char *strrchr(const char *s, int c);
-int strncmp(const char *s1, const char *s2, size_t n);
-void *memchr(const void *s, int c, size_t n);
-int memcmp(const void *s1, const void *s2, size_t n);
-char *strnstr(const char *big, const char *little, size_t len);
-
-
-
+-->
 
 <!-- relevant info on compilation/installation/execution-->
+
 # Instructions
 
 <!-- classic references related to the topic
@@ -274,8 +308,5 @@ char *strnstr(const char *big, const char *little, size_t len);
 - [ ] tutorials
 - [ ] How AI was used - spefcifying for which task and which parts of the project
 -->
+
 # Resources
-
-
-
-
