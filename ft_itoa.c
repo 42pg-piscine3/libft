@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 16:20:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/09/10 22:17:50 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/09/10 22:27:43 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 
 // Step 6: return the string.
 
-static size_t	num_len(long num)
+static size_t	ft_digitlen(long num)
 {
 	size_t	len;
 
@@ -54,7 +54,7 @@ char	*ft_itoa(int n)
 	char	*res;
 
 	num = n;
-	len = num_len(num);
+	len = ft_digitlen(num);
 	res = (char *)malloc(len + 1);
 	if (!res)
 		return (NULL);
