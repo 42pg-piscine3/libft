@@ -3,32 +3,219 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joshtan <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:20:01 by joshtan           #+#    #+#             */
-/*   Updated: 2026/08/06 12:57:16 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/08/21 17:34:46 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int isalpha(int c);
-int isdigit(int c);
-int isalnum(int c);
-int isascii(int c);
-int isprint(int c);
-int toupper(int c);
-int tolower(int c);
+# include <stddef.h>
+/* Part 1 - libc functions, reimplemented with the ft_ prefix */
 
-size_t strlen(const char *s);
-void *memset(void *s, int c, size_t n);
-void *memcpy(void *dest, const void *src, size_t n);
-void *memmove(void *dest, const void *src, size_t n);
-size_t strlcpy(char *dst, const char *src, size_t size);
-size_t strlcat(char *dst, const char *src, size_t size);
-char *strchr(const char *s, int c);
-char *strrchr(const char *s, int c);
-int strncmp(const char *s1, const char *s2, size_t n);
-void *memchr(const void *s, int c, size_t n);
-int memcmp(const void *s1, const void *s2, size_t n);
-char *strnstr(const char *big, const char *little, size_t len); 
+/**
+ * @defgroup ctype Character classification functions
+ * @brief Test a character against a specific class.
+ *
+ * @param c ASCII value of char to check.
+ * @return int
+ *      - `1` if the character matches the tested class
+ *      - `0` if the character does not match
+ * @{
+ */
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+/** @} */
 
+/**
+ * @brief Converts a lowercase letter to uppercase.
+ *
+ * @param c Character to convert.
+ * @return int Uppercase equivalent of c if c is a lowercase letter,
+ *      otherwise c unchanged.
+ */
+int		ft_toupper(int c);
+
+/**
+ * @brief Converts an uppercase letter to lowercase.
+ *
+ * @param c Character to convert.
+ * @return int Lowercase equivalent of c if c is an uppercase letter,
+ *      otherwise c unchanged.
+ */
+int		ft_tolower(int c);
+
+/**
+ * @brief Calculates the length of a string.
+ *
+ * @param s String to measure.
+ * @return size_t Number of characters before the terminating null byte.
+ */
+size_t	ft_strlen(const char *s);
+
+/**
+ * @brief Fills the first n bytes of the memory area pointed to by s
+ * 			with the constant byte c.
+ *
+ * @param s Pointer to the starting address of the memory block to fill
+ * @param c Character to set
+ * @param n Number of bytes to copy
+ * @return void* Pointer to the memory area s.
+ */
+void	*ft_memset(void *s, int c, size_t n);
+
+/**
+ * @brief Sets the first n bytes of the memory area s to zero.
+ *
+ * @param s Pointer to the memory area to zero out.
+ * @param n Number of bytes to set to zero.
+ * @return void
+ */
+void	ft_bzero(void *s, size_t n);
+
+/**
+ * @brief Copies n bytes from memory area src to memory area dest.
+ *
+ * @param dest Destination memory area.
+ * @param src Source memory area.
+ * @param n Number of bytes to copy.
+ * @return void* Pointer to dest.
+ */
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+
+/**
+ * @brief Copies n bytes from memory area src to memory area dest,
+ *      handling overlapping memory areas correctly.
+ *
+ * @param dest Destination memory area.
+ * @param src Source memory area.
+ * @param n Number of bytes to copy.
+ * @return void* Pointer to dest.
+ */
+void	*ft_memmove(void *dest, const void *src, size_t n);
+
+/**
+ * @brief Copies src to dst, truncating the result to fit in size bytes
+ *      and always null-terminating it (as long as size is not 0).
+ *
+ * @param dst Destination buffer.
+ * @param src Source string.
+ * @param size Total size of the destination buffer.
+ * @return size_t Length of src (the length of the string it tried to create).
+ */
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+
+/**
+ * @brief Appends src to the end of dst, truncating the result to fit in
+ *      size bytes and always null-terminating it (as long as there was
+ *      room to do so).
+ *
+ * @param dst Destination buffer containing a null-terminated string.
+ * @param src Source string to append.
+ * @param size Total size of the destination buffer.
+ * @return size_t Initial length of dst plus the length of src
+ *      (the length of the string it tried to create).
+ */
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+
+/**
+ * @brief Locates the first occurrence of c in the string s.
+ *
+ * @param s String to search.
+ * @param c Character to locate.
+ * @return char* Pointer to the first occurrence of c in s,
+ *      or NULL if c is not found.
+ */
+char	*ft_strchr(const char *s, int c);
+
+/**
+ * @brief Locates the last occurrence of c in the string s.
+ *
+ * @param s String to search.
+ * @param c Character to locate.
+ * @return char* Pointer to the last occurrence of c in s,
+ *      or NULL if c is not found.
+ */
+char	*ft_strrchr(const char *s, int c);
+
+/**
+ * @brief Compares at most the first n characters of the strings s1 and s2.
+ *
+ * @param s1 First string.
+ * @param s2 Second string.
+ * @param n Maximum number of characters to compare.
+ * @return int Difference between the first differing characters
+ *      (as unsigned char), or 0 if the compared portions are equal.
+ */
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+
+/**
+ * @brief Locates the first occurrence of c in the first n bytes of s.
+ *
+ * @param s Memory area to search.
+ * @param c Byte value to locate.
+ * @param n Number of bytes to search.
+ * @return void* Pointer to the first occurrence of c,
+ *      or NULL if not found within the first n bytes.
+ */
+void	*ft_memchr(const void *s, int c, size_t n);
+
+/**
+ * @brief Compares the first n bytes of the memory areas s1 and s2.
+ *
+ * @param s1 First memory area.
+ * @param s2 Second memory area.
+ * @param n Number of bytes to compare.
+ * @return int Difference between the first differing bytes
+ *      (as unsigned char), or 0 if the compared areas are equal.
+ */
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+
+/**
+ * @brief Locates the first occurrence of the substring little in big,
+ *      searching at most len characters.
+ *
+ * @param big String to search.
+ * @param little Substring to locate.
+ * @param len Maximum number of characters of big to search.
+ * @return char* Pointer to the beginning of the located substring,
+ *      or NULL if little is not found within len characters.
+ */
+char	*ft_strnstr(const char *big, const char *little, size_t len);
+
+/**
+ * @brief Converts the initial portion of str to an int,
+ *      skipping leading whitespace and an optional sign.
+ *
+ * @param str String to convert.
+ * @return int Converted integer value.
+ */
+int		ft_atoi(const char *str);
+
+/**
+ * @brief Allocates memory for an array of nmemb elements of size bytes
+ *      each, with all bytes initialized to zero.
+ *
+ * @param nmemb Number of elements to allocate.
+ * @param size Size in bytes of each element.
+ * @return void* Pointer to the allocated memory,
+ *      or NULL if the allocation fails.
+ */
+void	*ft_calloc(size_t nmemb, size_t size);
+
+/**
+ * @brief Allocates and returns a copy of the string s.
+ *
+ * @param s String to duplicate.
+ * @return char* Pointer to the newly allocated copy of s,
+ *      or NULL if the allocation fails.
+ */
+char	*ft_strdup(const char *s);
+
+#endif
