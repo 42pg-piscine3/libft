@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 16:20:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/09/11 11:37:14 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/09/11 11:38:05 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **         every unused slot is already NULL for cleanup and for the
 **         terminating NULL.
 ** Step 3: scan 's' again: skip a run of delimiters, measure the
-**         word that follows ('wln' characters), and ft_substr it
+**         word that follows ('wdlen' characters), and ft_substr it
 **         into the next array slot via the ft_addword helper.
 ** Step 4: if any ft_substr fails, free every word stored so far and
 **         the array itself, then return NULL.
@@ -135,7 +135,7 @@ static int	ft_fill(char **tab, char const *s, char c)
 {
 	size_t	idx;
 	size_t	pos;
-	size_t	wln;
+	size_t	wdlen;
 
 	idx = 0;
 	pos = 0;
@@ -143,12 +143,12 @@ static int	ft_fill(char **tab, char const *s, char c)
 	{
 		while (s[idx] == c)
 			++idx;
-		wln = 0;
-		while (s[idx + wln] != '\0' && s[idx + wln] != c)
-			++wln;
-		if (wln > 0 && !ft_addword(tab, &pos, s + idx, wln))
+		wdlen = 0;
+		while (s[idx + wdlen] != '\0' && s[idx + wdlen] != c)
+			++wdlen;
+		if (wdlen > 0 && !ft_addword(tab, &pos, s + idx, wdlen))
 			return (0);
-		idx += wln;
+		idx += wdlen;
 	}
 	return (1);
 }
