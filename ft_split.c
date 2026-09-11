@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 16:20:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/09/11 11:02:47 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/09/11 11:37:14 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,15 @@
 ** flag is still down; a delimiter always lowers the flag. Counting
 ** those flag raises counts the words in a single pass.
 */
+
+/**
+ * @brief Counts the number of words in 's', where a word is a
+ *        maximal run of characters that are not 'c'.
+ *
+ * @param s String to scan.
+ * @param c Delimiter character.
+ * @return size_t Number of words found.
+ */
 static size_t	ft_wordcount(char const *s, char c)
 {
 	size_t	count;
@@ -60,6 +69,14 @@ static size_t	ft_wordcount(char const *s, char c)
 ** string up to the first NULL slot, then frees the array itself.
 ** Used to unwind 'tab' when ft_split fails partway through filling it.
 */
+
+/**
+ * @brief Frees a NULL-terminated array of malloc'd strings, then
+ *        frees the array itself.
+ *
+ * @param tab NULL-terminated array of strings to free.
+ * @return void
+ */
 static void	ft_freetab(char **tab)
 {
 	size_t	idx;
@@ -78,6 +95,17 @@ static void	ft_freetab(char **tab)
 ** 'tab' (tracked by '*pos'), advancing '*pos' on success. Returns 0
 ** if the ft_substr allocation fails, 1 otherwise.
 */
+
+/**
+ * @brief Copies 'len' bytes starting at 'word' into tab[*pos] and
+ *        advances *pos on success.
+ *
+ * @param tab Array being filled.
+ * @param pos Pointer to the next free index in 'tab'.
+ * @param word Start of the word to copy.
+ * @param len Number of bytes to copy.
+ * @return int 1 on success, 0 if the allocation failed.
+ */
 static int	ft_addword(char **tab, size_t *pos, char const *word, size_t len)
 {
 	tab[*pos] = ft_substr(word, 0, len);
@@ -93,6 +121,16 @@ static int	ft_addword(char **tab, size_t *pos, char const *word, size_t len)
 ** Returns 0 as soon as an allocation fails, 1 once every word in
 ** 's' has been placed.
 */
+
+/**
+ * @brief Fills 'tab' with every word of 's', split on 'c'.
+ *
+ * @param tab Array to fill (already sized and zero-initialised).
+ * @param s String to split.
+ * @param c Delimiter character.
+ * @return int 1 on success, 0 if an allocation failed partway
+ *         through.
+ */
 static int	ft_fill(char **tab, char const *s, char c)
 {
 	size_t	idx;
@@ -121,6 +159,16 @@ static int	ft_fill(char **tab, char const *s, char c)
 ** ft_fill, and cleans up with ft_freetab if any word fails to
 ** allocate. Returns NULL on a NULL 's' or on any allocation failure.
 */
+
+/**
+ * @brief Splits 's' into an array of newly allocated strings, using
+ *        'c' as the delimiter.
+ *
+ * @param s String to split.
+ * @param c Delimiter character.
+ * @return char** NULL-terminated array of words, or NULL if 's' is
+ *         NULL or an allocation fails.
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
