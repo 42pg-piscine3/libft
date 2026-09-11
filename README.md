@@ -183,7 +183,7 @@ In this second part, you must develop a set of functions that are either not inc
 | Return Value      | None                                                                         |
 | External Function | `write`                                                                      |
 | Description       | Outputs the integer `n` to the specified file descriptor.                    |
-<!-- 
+
 ### IV.4 Part 3 - linked list
 
 Memory and string manipulation functions are useful. But you will soon discover that manipulating lists is even more useful.
@@ -294,9 +294,7 @@ Implement the following functions in order to easily use your lists:
 | Return Value      | The new list.<br/>`NULL` if the allocation fails.                                                                                                                                                                                            |
 | External Function | `malloc`, `free`                                                                                                                                                                                                                             |
 | Description       | Iterates through the list `lst`, applies the function `f` to each node's content, and creates a new list resulting of the successive applications of the function `f`. The `del` function is used to delete the content of a node if needed. |
--->
 
-<!-- relevant info on compilation/installation/execution-->
 
 # Instructions
 

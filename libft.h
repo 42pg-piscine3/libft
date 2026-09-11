@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:20:01 by joshtan           #+#    #+#             */
-/*   Updated: 2026/08/21 17:34:46 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/09/10 21:37:31 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -323,5 +323,13 @@ void	ft_putendl_fd(char *s, int fd);
  * @return void
  */
 void	ft_putnbr_fd(int n, int fd);
+
+/* PArt 3 - Linked List*/
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 #endif
