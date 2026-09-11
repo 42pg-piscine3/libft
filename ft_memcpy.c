@@ -6,7 +6,7 @@
 /*   By: joshtan <joshtan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 12:00:00 by joshtan           #+#    #+#             */
-/*   Updated: 2026/08/27 15:23:38 by joshtan          ###   ########.fr       */
+/*   Updated: 2026/09/11 15:42:20 by joshtan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char		*c_dst;
 	const unsigned char	*c_src;
 
-	if (!dest || !src)
-		return (0);
 	c_dst = dest;
 	c_src = src;
 	while (0 < n)
