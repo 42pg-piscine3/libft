@@ -1,4 +1,4 @@
-This project has been created as part of the 42 curriculum by joshtan
+_This project has been created as part of the 42 curriculum by joshtan_
 
 <!--describe project, including its goal and a brief overview.-->
 
